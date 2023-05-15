@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Logged_inController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="284.0" style="-fx-background-color: #D9C4B1;">
+         <children>
+            <ImageView fitHeight="178.0" fitWidth="198.0" layoutX="12.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@pisicaTa.jpg" />
+               </image>
+            </ImageView>
+            <Label fx:id="zgarda" layoutX="78.0" layoutY="109.0" prefHeight="50.0" prefWidth="105.0" rotate="2.0" text="Label" textFill="#f2eded">
+               <font>
+                  <Font name="Corbel Bold" size="18.0" />
+               </font></Label>
+            <Button fx:id="showrequestsButton" layoutX="13.0" layoutY="300.0" mnemonicParsing="false" onAction="#showRequests" text="showRequestsButton" />
+            <Button layoutX="14.0" layoutY="274.0" mnemonicParsing="false" onAction="#showFriends" prefHeight="26.0" prefWidth="125.0" text="showfriendsButton" />
+            <Button fx:id="messageButton" layoutX="14.0" layoutY="247.0" mnemonicParsing="false" onAction="#openconversation" prefHeight="26.0" prefWidth="125.0" text="ShowMessages" />
+            <Button fx:id="logoutButton" layoutX="14.0" layoutY="326.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="26.0" prefWidth="125.0" text="Log Out" />
+            <Button fx:id="deleteUser" layoutX="14.0" layoutY="352.0" mnemonicParsing="false" onAction="#deleteaccount" prefHeight="26.0" prefWidth="126.0" text="Delete account" />
+            <Button fx:id="sendmsgbutton" layoutX="12.0" layoutY="221.0" mnemonicParsing="false" onAction="#sendMessage" prefHeight="26.0" prefWidth="126.0" text="SendMessage" />
+            <Button fx:id="butonnou" layoutX="12.0" layoutY="200.0" mnemonicParsing="false" onAction="#showYourRequests" prefHeight="26.0" prefWidth="126.0" text="ShowYourRequests" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="400.0" prefWidth="317.0" style="-fx-background-color: #D9C4B1;">
+         <children>
+            <TableView fx:id="tableFriends" editable="true" layoutX="194.0" layoutY="2.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="394.0" prefWidth="124.0" style="-fx-background-color: #D9C4B1;" AnchorPane.leftAnchor="194.0" AnchorPane.rightAnchor="0.0">
+              <columns>
+                <TableColumn fx:id="column" prefWidth="199.2000274658203" style="background-color: #D9C4B1;" text="Friends" />
+              </columns>
+               <opaqueInsets>
+                  <Insets bottom="-1.0" left="-1.0" right="-1.0" top="-5.0" />
+               </opaqueInsets>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <TextField fx:id="searchbar" layoutX="42.0" layoutY="1.0" prefHeight="26.0" prefWidth="152.0" promptText="Enter user's username" />
+            <Button fx:id="searchbutton" layoutX="-14.0" layoutY="1.0" mnemonicParsing="false" onAction="#search" prefHeight="26.0" prefWidth="60.0" style="-fx-background-color: transparent;" text="Search" />
+            <AnchorPane layoutY="27.0" prefHeight="374.0" prefWidth="193.0">
+               <children>
+                  <Label fx:id="numeusercautat" prefHeight="54.0" prefWidth="174.0" text="nume user" textFill="#ea4727">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="sendinviteButton" layoutX="-5.0" layoutY="116.0" mnemonicParsing="false" onAction="#sendInvite" prefHeight="26.0" prefWidth="92.0" text="send invite" visible="false" />
+                  <Button fx:id="removefriendButton" layoutX="257.0" layoutY="347.0" mnemonicParsing="false" onAction="#removeFriend" prefHeight="26.0" prefWidth="60.0" text="reject" visible="false" />
+                  <TableView fx:id="tabelfriendshipRequests" layoutX="194.0" layoutY="148.0" onMouseClicked="#showacceptButton" prefHeight="201.0" prefWidth="126.0" style="-fx-background-color: #D9C4B1;">
+                    <columns>
+                      <TableColumn fx:id="coltabelrequests" prefWidth="137.5999969482422" text="Requests" visible="false" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="acceptButton" layoutX="197.0" layoutY="347.0" mnemonicParsing="false" onAction="#acceptRequest" prefHeight="26.0" prefWidth="60.0" text="accept" visible="false" />
+                  <Button fx:id="deletefriendButton" layoutX="-5.0" layoutY="116.0" mnemonicParsing="false" onAction="#deleteFriend" prefHeight="26.0" prefWidth="68.0" text="Remove" visible="false" />
+                  <Separator layoutX="191.0" orientation="VERTICAL" prefHeight="374.0" prefWidth="6.0" />
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+   </children>
+</HBox>

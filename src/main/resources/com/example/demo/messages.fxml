@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.MessagesController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="599.0">
+         <children>
+            <TableView fx:id="tabelMessages" layoutX="7.0" layoutY="6.0" prefHeight="394.0" prefWidth="292.0">
+              <columns>
+                <TableColumn fx:id="fromcolumn" prefWidth="92.79998779296875" text="from" />
+                <TableColumn fx:id="datecollumn" prefWidth="97.60003662109375" text="date" />
+                  <TableColumn fx:id="textColum" prefWidth="97.5999755859375" text="Message" />
+              </columns>
+            </TableView>
+            <Label fx:id="labeltext" layoutX="324.0" layoutY="93.0" prefHeight="214.0" prefWidth="268.0" text="Label" />
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>
